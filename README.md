@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# IT TRACKER using redux, materialize and json web server
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. ### `npm create-react-app .` in current folder named "it-tracker"
 
-## Available Scripts
+2. ### `npm i -D json-server concurrently`
 
-In the project directory, you can run:
+In the root of application add a file named "db.json" This will hold our data.
+This dummy data will act as a server and will update accordingly. "logs" and "techs".
 
-### `npm start`
+3. ### Add the following scripts to package.json which will allow to listen to json server and run concurrently.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+"json-server": "json-server --watch db.json --port 5000",
+"dev": "concurrently \"npm start\" \"npm run json-server\"",
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+4. ### `npm run dev`
+5. ### Add proxy in package.json at bottom so we don't have to deal with localhost 5000 in the requests in the react front end, the restart the server.
 
-### `npm test`
+   "proxy": "http://localhost:5000"
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+6. ### `npm install materialize-css@next`
+7. ### `npm run dev` then clean up react app as usual.
+   turn app.js into a function, get rid of css in app.css
+8. ### import 'materialize-css/dist/css/materialize.min.css';
+   ### import M from 'materialize-css/dist/js/materialize.min.js';
+   bring in the main css and js files to application in App.js
+9. ### ` useEffect(() => { M.AutoInit();});`
+   Bring into App.js ---- This allows us to use modals and other components of Materialize since we can not access query selectors in React.
+10. ### `<link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">`
+    search for material ui icons grab link. Add to index.html, change title to it logger.
