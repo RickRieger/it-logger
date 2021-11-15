@@ -27,3 +27,6 @@ This dummy data will act as a server and will update accordingly. "logs" and "te
    Bring into App.js ---- This allows us to use modals and other components of Materialize since we can not access query selectors in React.
 10. ### `<link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">`
     search for material ui icons grab link. Add to index.html, change title to it logger.
+11. ### Start building components and layout, fetch data from json web server.
+12. ### `npm i moment react-moment`
+    import it in the LogItem.js file
