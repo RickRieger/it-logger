@@ -1,6 +1,6 @@
 # IT TRACKER using redux, materialize and json web server
 
-1. ### `npm create-react-app .` in current folder named "it-tracker"
+1. ### `npx create-react-app .` in current folder named "it-tracker"
 
 2. ### `npm i -D json-server concurrently`
 
@@ -30,3 +30,11 @@ This dummy data will act as a server and will update accordingly. "logs" and "te
 11. ### Start building components and layout, fetch data from json web server.
 12. ### `npm i moment react-moment`
     import it in the LogItem.js file
+13. ### Continue to add folders/files building application
+14. # REDUX
+### `npm i redux react-redux redux-thunk redux-devtools-extension`
+
+### redux - a state management library 
+### react-redux - a package that allows redux to work with react.
+### redux-thunk - a piece of middleware for redux which allows for asynchronous functions inside of actions so we can wait for response to comeback and dispatch to the reducer.
+### redux-devtools-extension - allows for cleaner code to be written to enable the dev tools in chrome for redux.    
