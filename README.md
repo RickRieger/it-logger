@@ -38,3 +38,13 @@ This dummy data will act as a server and will update accordingly. "logs" and "te
 ### react-redux - a package that allows redux to work with react.
 ### redux-thunk - a piece of middleware for redux which allows for asynchronous functions inside of actions so we can wait for response to comeback and dispatch to the reducer.
 ### redux-devtools-extension - allows for cleaner code to be written to enable the dev tools in chrome for redux.    
+
+# Bring Redux into a component.
+
+# Add new functionality to the app.
+
+1. Add the action.
+
+2. Add reducer functionality.
+
+3. Connect to the component.
