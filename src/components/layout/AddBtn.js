@@ -1,6 +1,6 @@
 import React from 'react';
 
-function AddBtn() {
+const AddBtn = () => {
   return (
     <div className='fixed-action-btn'>
       <a
@@ -26,6 +26,6 @@ function AddBtn() {
       </ul>
     </div>
   );
-}
+};
 
 export default AddBtn;

@@ -18,18 +18,20 @@ const AddLogModal = ({ addLog }) => {
         message,
         attention,
         tech,
-        date: new Date(),
+        date: new Date()
       };
 
       addLog(newLog);
 
       M.toast({ html: `Log added by ${tech}` });
 
+      // Clear Fields
       setMessage('');
       setTech('');
       setAttention(false);
     }
   };
+
   return (
     <div id='add-log-modal' className='modal' style={modalStyle}>
       <div className='modal-content'>
@@ -40,22 +42,21 @@ const AddLogModal = ({ addLog }) => {
               type='text'
               name='message'
               value={message}
-              onChange={(e) => setMessage(e.target.value)}
+              onChange={e => setMessage(e.target.value)}
             />
             <label htmlFor='message' className='active'>
               Log Message
             </label>
           </div>
         </div>
+
         <div className='row'>
           <div className='input-field'>
             <select
               name='tech'
               value={tech}
               className='browser-default'
-              onChange={(e) => {
-                setTech(e.target.value);
-              }}
+              onChange={e => setTech(e.target.value)}
             >
               <option value='' disabled>
                 Select Technician
@@ -64,18 +65,21 @@ const AddLogModal = ({ addLog }) => {
             </select>
           </div>
         </div>
+
         <div className='row'>
           <div className='input-field'>
-            <label>
-              <input
-                type='checkbox'
-                className='filled-in'
-                checked={attention}
-                value={attention}
-                onChange={(e) => setAttention(!attention)}
-              />
-              <span>Needs Attention</span>
-            </label>
+            <p>
+              <label>
+                <input
+                  type='checkbox'
+                  className='filled-in'
+                  checked={attention}
+                  value={attention}
+                  onChange={e => setAttention(!attention)}
+                />
+                <span>Needs Attention</span>
+              </label>
+            </p>
           </div>
         </div>
       </div>
@@ -93,11 +97,15 @@ const AddLogModal = ({ addLog }) => {
 };
 
 AddLogModal.propTypes = {
-  addLog: PropTypes.func.isRequired,
-};
-const modalStyle = {
-  width: '75%',
-  height: '75%',
+  addLog: PropTypes.func.isRequired
 };
 
-export default connect(null, { addLog })(AddLogModal);
+const modalStyle = {
+  width: '75%',
+  height: '75%'
+};
+
+export default connect(
+  null,
+  { addLog }
+)(AddLogModal);
