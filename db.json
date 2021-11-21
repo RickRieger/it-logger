@@ -1,20 +1,5 @@
 {
-  "logs": [
-    {
-      "id": 1,
-      "message": "vdsv",
-      "attention": false,
-      "tech": "John Doe",
-      "date": "2021-11-20T20:38:25.152Z"
-    },
-    {
-      "message": "ddd",
-      "attention": true,
-      "tech": "Sam Smith",
-      "date": "2021-11-20T20:19:16.524Z",
-      "id": 2
-    }
-  ],
+  "logs": [],
   "techs": [
     {
       "id": 1,
@@ -30,6 +15,11 @@
       "id": 3,
       "firstName": "Sara",
       "lastName": "Wilson"
+    },
+    {
+      "firstName": "Rick",
+      "lastName": "Rieger",
+      "id": 4
     }
   ]
 }

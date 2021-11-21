@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import M from 'materialize-css/dist/js/materialize.min.js';
 import { updateLog } from '../../actions/logActions';
+import TechSelectOptions from '../techs/TechSelectOptions';
 import PropTypes from 'prop-types';
 
 const EditLogModal = ({ current, updateLog }) => {
@@ -21,18 +22,16 @@ const EditLogModal = ({ current, updateLog }) => {
     if (message === '' || tech === '') {
       M.toast({ html: 'Please enter a message and tech' });
     } else {
-     
       const updObj = {
         id: current.id,
         message,
-        attention, 
+        attention,
         tech,
-        date: new Date()
-      }
+        date: new Date(),
+      };
 
-      updateLog(updObj)
-      M.toast({html:`Log updated by ${tech}`})
-
+      updateLog(updObj);
+      M.toast({ html: `Log updated by ${tech}` });
 
       setMessage('');
       setTech('');
@@ -51,7 +50,6 @@ const EditLogModal = ({ current, updateLog }) => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
-
           </div>
         </div>
         <div className='row'>
@@ -67,9 +65,7 @@ const EditLogModal = ({ current, updateLog }) => {
               <option value='' disabled>
                 Select Technician
               </option>
-              <option value='John Doe'>John Doe</option>
-              <option value='Sam Smith'>Sam Smith</option>
-              <option value='Sarah Wilson'>Sarah Wilson</option>
+              <TechSelectOptions />
             </select>
           </div>
         </div>
